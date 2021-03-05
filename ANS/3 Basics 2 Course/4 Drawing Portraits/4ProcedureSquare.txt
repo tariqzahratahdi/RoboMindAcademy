@@ -1,0 +1,22 @@
+# Description: Create a procedure
+# which lets the robot draw 
+# a white square.
+
+# Challenge: use procedure 
+
+# Solution:
+
+# procedure call
+square
+
+# procedure definition
+procedure square
+{
+	paintWhite
+	repeat(4)
+	{
+		forward(1)
+		right
+	}
+	stopPainting
+}

@@ -1,0 +1,12 @@
+#!python
+# Challenge: Create a function that draws a vertical line. Use that function to
+#            draw a line of length 2 from the starting point of Robo.
+
+# Solution:
+def paint_line(length):
+    robo.paintWhite()
+    robo.forward(length)
+    robo.stopPainting()
+
+
+paint_line(2)

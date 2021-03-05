@@ -1,0 +1,24 @@
+# Description: Let the robot
+# paint a black letter "M".
+
+# Challenge: Just try out 
+# commands like paintBlack
+# and sequencing.
+
+# Solution:
+
+paintBlack
+forward(2)
+right
+forward(1)
+right
+forward(2)
+backward(2)
+left
+forward(1)
+right
+forward(2)
+stopPainting
+left
+forward(1)
+left

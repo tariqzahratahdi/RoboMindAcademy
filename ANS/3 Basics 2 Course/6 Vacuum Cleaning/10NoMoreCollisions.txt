@@ -1,0 +1,35 @@
+# Description: Let the robot find
+# a beacon at an unknown location
+# without help of the environment.
+
+# Challenge: Use flipCoin in combination
+# with repeat{...} as a search strategy.
+
+# Solution:
+
+# there are 14 beacons on the carpet
+repeat(14)
+{
+	repeat
+	{
+		if(frontIsClear)
+		{
+			forward(1)
+		}
+		
+		if(frontIsBeacon)
+		{
+			eatUp
+			break # in order to keep count
+		}
+
+		if (flipCoin)
+		{
+			right
+		}
+		else
+		{
+			left
+		}
+	}
+}

@@ -1,0 +1,11 @@
+# Description: Turn Robo until there is a beacon
+# in front of him and then pick it up.
+
+# Challenge: intro to let
+# students get acquainted with
+# turning and pickUp.
+
+# solution:
+
+right # or: left left left
+pickUp

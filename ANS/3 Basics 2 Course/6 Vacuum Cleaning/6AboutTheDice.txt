@@ -1,0 +1,27 @@
+# Description: create a dice.
+
+# Challenge: use and understand 
+# flipCoin, randomness.
+
+# Solution:
+
+# paint white at least once
+right
+paintWhite
+stopPainting
+forward(1)
+
+# and then 0-5 times more
+repeat(5)
+{
+	if (flipCoin)
+	{
+		paintWhite
+	}
+	else
+	{
+		paintBlack
+	}
+	stopPainting
+	forward(1)
+}

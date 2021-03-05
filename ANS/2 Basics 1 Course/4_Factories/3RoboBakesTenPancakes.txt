@@ -1,0 +1,21 @@
+# Description: Let the robot bake
+# 10 pancakes with paintWhite
+# and stopPainting
+
+# Challenge: Understand repeat(.){...}
+
+# Solution:
+
+# go to start
+right
+right
+forward(1)
+left
+
+# make pancakes
+repeat(10)
+{
+	paintWhite
+	stopPainting
+    forward(1)
+}

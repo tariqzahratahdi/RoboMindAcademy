@@ -1,0 +1,23 @@
+# Description: Let the robot go just 
+# until the wall. 
+
+# Challenge: Use repeat(.){...} and
+# if(.){...} else{...} in combination
+# with frontIsObstacle. Do NOT count!
+
+# Solution:
+
+repeat()
+{
+	if(frontIsObstacle)
+	{
+		# 1. ready! So:
+		end
+	}
+	else
+	{
+		# 2. What should the robot
+		# do while not at the wall:
+		forward(1)
+	}
+}

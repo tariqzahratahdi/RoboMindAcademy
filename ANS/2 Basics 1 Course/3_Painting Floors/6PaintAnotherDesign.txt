@@ -1,0 +1,24 @@
+# Description: Adjust your
+# program to let Robo now
+# paint horizontal stripes.
+
+# Challenge: Make minimal changes.
+
+# solution:
+
+right
+repeat(6)
+{
+    # paint a stripe
+    paintWhite
+    forward(5)
+    
+    # go back
+    stopPainting
+    backward(5)
+    
+    # go to a new position
+    left
+    forward(1)
+    right
+}

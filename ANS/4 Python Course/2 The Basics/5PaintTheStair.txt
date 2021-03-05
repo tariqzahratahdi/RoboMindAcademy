@@ -1,0 +1,12 @@
+#!python
+# Challenge:
+# Draw the white stairs as shown in the picture.
+
+# Solution
+robo.paintWhite()
+
+for stap in range(4):
+    robo.forward()
+    robo.right()
+    robo.forward()
+    robo.left()

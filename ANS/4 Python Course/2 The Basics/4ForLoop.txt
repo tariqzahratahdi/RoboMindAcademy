@@ -1,0 +1,13 @@
+#!python
+# Challenge:
+#    Paint a line of 1, turn right,
+#    Paint a line of 2, turn right,
+#    Paint a line of 3, turn right,
+#    Paint a line of 4, turn right,
+#    Paint a line of 5, turn right.
+#    Oh yes, use a for loop!
+
+robo.paintWhite()
+for w in range(6):
+    robo.forward(w)
+    robo.right()

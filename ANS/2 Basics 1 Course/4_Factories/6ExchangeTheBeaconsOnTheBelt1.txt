@@ -1,0 +1,39 @@
+# Description: Let the robot move
+# the beacons from the white onto
+# the black conveyor belt and from
+# the black onto the white conveyor
+# belt.
+
+# Challenge: See that you the second
+# part is a copy of the first, BUT
+# with mirrored moves.
+
+# solution: 
+
+# move from the white belt to the black
+repeat(6)
+{
+	pickUp
+	right
+	right
+	putDown
+	left
+	forward(1)
+	left
+}
+
+# turn around
+right
+right
+
+# move from the black belt to the white
+repeat(6)
+{
+	pickUp
+	left
+	left
+	putDown
+	right
+	forward(1)
+	right
+}

@@ -1,0 +1,41 @@
+# Description: Let the robot find
+# the beacon and pick it up.
+
+# Challenge: Use repeat{...} and
+# if(.){} else if (.){} else{}. 
+# Do NOT count, no sequencing!
+
+# Solution:
+
+repeat
+{
+	# 1. The robot sees the
+	# beacon. Complete:
+	if(frontIsBeacon)
+	{
+		pickUp
+		end
+	}
+
+	# 2. What to do when there is
+	# no wall to the right:
+	else if (rightIsClear)
+	{
+		right
+		forward(1)
+	}
+
+	# 3. What to do when there
+	# is something in front:
+	else if (frontIsObstacle)
+	{
+		left
+	}
+	
+	# 4. What to do otherwise
+	# while not at the beacon:
+	else
+	{
+		forward(1)
+	}
+}

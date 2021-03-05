@@ -1,0 +1,33 @@
+# Description: Let the robot 
+# use the white dots to find 
+# the beacon.
+
+# Challenge: Use repeat(.){...}
+# and if(.){}else if(.){} else{}
+
+# Solution:
+
+repeat
+{
+	# 1. Do this when there
+	# is a beacon in front:
+	if(frontIsBeacon)
+	{
+		pickUp
+		end
+	}
+	
+	# 2. Do this when there
+	# is a white dot in front:
+	else if(frontIsWhite)
+	{
+		forward(1)
+		left
+	}
+	
+	# 3. Do this otherwise:
+	else
+	{
+		forward(1)
+	}
+}

@@ -1,0 +1,21 @@
+# Description: create a dice.
+
+# Challenge: use and understand 
+# flipCoin, randomness.
+
+# Solution:
+
+right
+repeat(3)
+{
+	if (flipCoin)
+	{
+		paintWhite
+	}
+	else
+	{
+		paintBlack
+	}
+	stopPainting
+	forward(1)
+}
