@@ -1,0 +1,103 @@
+# SIERPINSKI TRIANGLE
+# go to start
+repeatWhile(frontIsClear){
+    north(1)
+}
+west(0)
+repeatWhile(frontIsClear){
+    west(1)
+}
+east(1)
+south(1)
+north(0)
+
+# go
+repeat(20)
+{
+    # paint
+    repeatWhile(rightIsClear){
+        applyRule
+        east(1)
+        north(0)
+    }
+    
+    #next line
+    south(1)
+    west(0)
+    repeatWhile(frontIsClear){
+        west(1)
+    }
+    east(1)
+    north(0)
+}
+
+# current pattern          111	110	101	100	011	010	001	000
+# new state for center cell 0	1	0	1	1	0	1	0
+procedure applyRule
+{
+    if(frontIsWhite){
+        # _1_
+        north(1)
+        if(leftIsWhite){
+            # 11_
+            if(rightIsWhite){
+                # 111
+                makeBlack
+            }
+            else{
+                # 110
+                makeWhite
+            }
+        }
+        else{
+            # 01_
+            if(rightIsWhite){
+                # 011
+                makeWhite
+            }
+            else{
+                # 010
+                makeBlack
+            }
+        }
+        
+    }
+    else{
+        # _0_
+        north(1)
+        if(leftIsWhite){
+            # 10_
+            if(rightIsWhite){
+                # 101
+                makeBlack
+            }
+            else{
+                # 100
+                makeWhite
+            }
+        }
+        else{
+            # 00_
+            if(rightIsWhite){
+                # 001
+                makeWhite
+            }
+            else{
+                # 000
+                makeBlack
+            }
+        }        
+    }    
+}
+
+procedure makeWhite{
+    south(1)
+    paintWhite
+    stopPainting    
+}
+
+procedure makeBlack{
+    south(1)
+    #paintBlack
+    #stopPainting    
+}

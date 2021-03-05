@@ -1,0 +1,154 @@
+# Description: Let Robo put the beacons
+# in the tree on the black spots.
+
+# Challenge: Let him do so automatically
+# and use procedures!
+
+# Solution: fill branches one by one
+# until top is reached (stop-condition).
+# Then return to start position
+
+# this is just a possible solution ...
+
+# mark the starting position
+paintBlack
+stopPainting
+forward(3)
+right
+
+# put all beacons in the tree
+repeat()
+{
+    getBeacon
+    goToTreeTrunk
+    goToBranch
+    putBeaconInTree
+
+    # put the last beacon in the top
+    if (frontIsBlack)
+    {
+        putDown
+        goToBase
+        break
+    }
+}
+
+procedure goToBase()
+{
+    right
+    right
+    goToRoot
+    left
+    repeatWhile( not rightIsBlack )
+    {
+        forward(1)
+    } 
+    left
+    backward(1)
+}
+
+procedure putBeaconInTree
+{
+    repeat()
+    {
+        putBeaconInBranch
+        if ( frontIsBeacon )
+        {
+            break
+        }
+        right
+        goToTreeTrunk
+        north(1)
+        if (frontIsBlack)
+        {
+            return
+        }
+        goToBranch
+    }
+    right
+    right
+    goToTreeTrunk
+    south(0)
+    goToRoot
+    left
+}
+
+procedure putBeaconInBranch
+{
+    # beacon on branch1 right
+    placeBeacon
+    if (frontIsBeacon)
+    {
+        return
+    }
+    else
+    {
+        placeBeacon
+    }
+}
+  
+procedure getBeacon()
+{
+    repeatWhile( frontIsClear and not rightIsBeacon )
+    {
+        forward(1)
+    } 
+    if (rightIsBeacon)
+    {
+        right
+        pickUp
+        right
+    }
+    else
+    {
+        pickUp
+        right
+        right
+    }
+}
+
+procedure goToRoot()
+{
+    repeatWhile( frontIsWhite )
+    {
+        forward(1)
+    } 
+}
+
+procedure goToTreeTrunk()
+{
+    repeatWhile( frontIsClear and not (leftIsWhite or rightIsWhite))
+    {
+        forward(1)
+    }
+    right
+}
+
+procedure goToBranch()
+{
+    repeatWhile( not ( leftIsWhite or rightIsWhite or leftIsBlack or rightIsBlack or frontIsBlack))
+    {
+        forward(1)
+    }
+}
+
+procedure placeBeacon()
+{
+    # goto branch end
+    right
+    repeatWhile( frontIsClear and not frontIsBlack )
+    {
+        forward(1)
+    }
+    
+    # empty spot
+    if (frontIsClear)
+    {
+        putDown
+    }
+    else
+    {
+        right
+    }
+}
+    

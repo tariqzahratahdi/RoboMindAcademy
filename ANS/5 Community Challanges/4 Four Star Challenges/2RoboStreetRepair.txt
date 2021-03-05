@@ -1,0 +1,213 @@
+# Solution: This solution uses a randomwalk to
+# find both the white line and the potholes.
+# An additional challenge would be to 
+# figure out a more efficient algorithm.
+# Another challenge would be to come up with
+# a stopping criterion when the robot is ready.
+
+repeat()
+{
+    findFirstObstacleOnWhiteLine()
+    followWhiteLineUntilBeacon()
+    pickUp()
+    findBlackSpotInFront()
+    putDown()
+}
+
+procedure followWhiteLineUntilBeacon()
+{
+    # found the beacon
+    if (frontIsBeacon)
+    {
+        return
+    }
+        
+    # Turn around if there is no beacon
+    # on this part of the white line
+    else
+    {
+        goDirectWithStopCondition
+    }
+}
+
+# random walk to find the white line, align with it
+# and move until obstacle
+procedure findFirstObstacleOnWhiteLine
+{
+    # random walk until white in front
+    repeatWhile(not frontIsWhite())
+    {
+        if ( frontIsClear() )
+        {
+            forward(1)
+        }
+        doRandomTurn
+    }
+
+    # move along line
+    moveAlongWhiteLineUntilObstacle
+}
+
+# position along white line and move until obstacle
+procedure moveAlongWhiteLineUntilObstacle
+{
+    if (frontIsClear)
+    {
+        # on white line
+        forward(1)
+        
+        #align with it
+        if(not frontIsWhite())
+        {
+            if(rightIsWhite())
+            {
+                right()
+            }
+            
+            else if(leftIsWhite())
+            {
+                left()
+            }
+        }
+        
+        # move along line until first obstatcle
+        repeatWhile( frontIsClear() )
+        {
+            forward(1)
+        }
+    }
+}
+
+# Randomwalk to find an empty black spot
+# to drop the beacon.
+procedure findBlackSpotInFront
+{
+    repeat()
+    {           
+        # stop if an empty black spot is found
+        if ( frontIsBlack() and not frontIsBeacon() )
+        {
+             break
+        }
+        else if (leftIsBlack() and not leftIsBeacon() )
+        {
+             left
+             break
+        }
+        else if (rightIsBlack() and not rightIsBeacon() )
+        {
+             right
+             break
+        }
+        
+        makeMove
+        
+        # create a biased randomwalk to get out of the
+        # corridors easier and prevent getting stuck
+        if (flipCoin())
+        {
+            if (flipCoin())
+            {
+                doRandomTurn
+            }
+       }
+    }
+ }
+
+procedure goDirectWithStopCondition
+{
+    # go to line end 2
+    goToNextLineEnd()
+    if (frontIsBeacon)
+    {
+        return
+    }
+
+    # go to line end 3
+    goToNextLineEnd()
+    if (frontIsBeacon)
+    {
+        return
+    }
+    
+    # go to line end 4
+    goToNextLineEnd()
+    if (frontIsBeacon)
+    {
+        return
+    }
+
+    # at the 4th wall: no beacons left
+    # park robo in the middle and stop
+    right
+    right
+    goToCrossing
+
+    # park Robo
+    north(1)
+    backward(1)
+    end
+}
+
+procedure goToNextLineEnd
+{
+    # facing the wall: go back to crossing
+    right
+    right
+
+    goToCrossing()
+    right
+    
+    # goto next line end
+    repeatWhile(frontIsClear)
+    {
+        forward(1)
+    }
+}
+
+procedure goToCrossing
+{
+    repeatWhile(frontIsClear)
+    {
+        # stop at crossing
+        if (leftIsWhite and rightIsWhite) 
+        { 
+            break
+        }
+        
+        forward(1)
+    }
+}
+
+procedure makeMove
+{
+    if( frontIsObstacle() )
+    {
+        if (leftIsClear)
+        {
+            left
+        }
+        else if (rightIsClear)
+        {
+            right
+        }
+        else
+        {
+            right
+            right
+        }
+    }
+    forward(1)
+}
+
+procedure doRandomTurn
+{
+    if(flipCoin())
+    {
+        right
+    }
+    else
+    {
+        left
+    }
+}

@@ -1,0 +1,31 @@
+# Description: Let the robot automatically
+# go to the black spot at the beginning
+# of the white line and stop on top of it.
+# Then automatically turn to the white line.
+
+# Challenge: Use repeat(.){...}
+# or repeatWhile(.){...} to do it
+# automatically
+
+# Solution:
+
+# 1. Turn to the right direction
+repeatWhile(frontIsObstacle)
+{
+    right
+}
+
+# 2. Go to the first black spot
+repeatWhile(not frontIsBlack)
+{
+    forward(1)
+}
+
+# 3. Stop on top of the black spot
+forward(1)
+
+# 4. Turn to the white line
+repeatWhile(not frontIsWhite)
+{
+    right
+}

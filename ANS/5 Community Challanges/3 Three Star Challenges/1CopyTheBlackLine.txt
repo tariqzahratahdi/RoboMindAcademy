@@ -1,0 +1,26 @@
+# Description: Create a white line which
+# is as long as the black line
+
+# Challenge: Copy the black line with a 
+# white line without measuring the length of
+# the black line!
+
+# Solution:
+
+repeatWhile(leftIsBlack)
+{
+    forward(1)
+    if(leftIsBlack)
+    {
+        backward(1)
+        right
+        forward(1)
+        left
+        paintWhite
+        forward(1)
+        stopPainting
+        left
+        forward(1)
+        right
+    }
+}

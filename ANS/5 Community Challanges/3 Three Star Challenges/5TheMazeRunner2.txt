@@ -1,0 +1,33 @@
+# Description: Let the robot find 
+# the beacon in the maze by keeping 
+# the wall to its right-hand side.
+
+# Challenge: Use repeat(.){...} and 
+# conditions: if(.){...). Let the robot 
+# solve the problem step by step.
+
+# solution:
+
+repeat()
+{
+	if (frontIsBeacon)
+	{
+       pickUp
+	   end
+	}
+	
+	if (rightIsClear)
+	{
+       right
+	}
+	   
+	if (frontIsObstacle)
+	{
+	   left
+	}
+	
+	if (frontIsClear)
+	{
+	   forward(1)
+	}
+}

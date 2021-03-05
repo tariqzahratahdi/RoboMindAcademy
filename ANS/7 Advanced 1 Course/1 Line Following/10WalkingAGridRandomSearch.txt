@@ -1,0 +1,115 @@
+# Description: Parc the robot on the
+# black spot. Use random search to find it.
+
+# Challenge: Use flipCoin.
+# Enumerate the options the robot has
+# in every situation and let him randomly
+# choose between those options, but stay
+# on the white lines!
+
+# Solution:
+
+# Main loop:
+repeat(){
+    StopIfBlackSpot()
+    countWhite = AssessSituation()
+    MakeDecision(countWhite)
+}
+
+procedure AssessSituation()
+{
+    count = 0
+    # left white = 1
+    if (leftIsWhite) {
+        count = count + 1
+    }
+    # right white = 2
+    if (RightIsWhite) {
+        count = count + 2
+    }
+    #front white = 4
+    if (FrontIsWhite) {
+        count = count + 4
+    }
+    return (count)
+}
+
+procedure StopIfBlackSpot()
+{
+    if (leftIsBlack) {
+        left
+    } else if(RightIsBlack) {
+        right
+    }
+
+    if (FrontIsBlack) {
+        forward
+        end
+    }
+}
+
+procedure MakeDecision(count)
+{
+    # one choice
+    if (count == 1) {
+        left
+    } else if(count == 2) {
+        right
+    } else if(count == 4) {
+        forward
+    }
+
+    # two choices
+    else if(count == 3) {
+        if (flipCoin) {
+           left
+        } else {
+           right
+        }
+    }
+    else if(count == 5)
+    {
+        if (flipCoin) {
+           left
+        } else {
+            forward
+        }
+    }
+    else if(count == 6)
+    {
+        if (flipCoin){
+            right
+        } else {
+            forward
+        }
+    }
+
+    # three choices (prefer forward)
+    else if(count == 7)
+    {
+       if (flipCoin) {
+          if (flipCoin) {
+             left
+          } else {
+             right
+          }
+       } else {
+          forward
+       }
+    }
+
+    # no choice: we are retracing our steps
+    else if(count == 0)
+    {
+        if (frontIsClear) {
+            forward
+        } else {
+            if(leftIsClear) {
+                left
+            } else if(rightIsClear) {
+                right
+            }
+            forward
+        }
+    }
+}

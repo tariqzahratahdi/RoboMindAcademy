@@ -1,0 +1,77 @@
+# Description: The robot should create a 
+# white line which is twice as long as the 
+# black line. 
+
+# Challenge: Create a white line twice
+# as long as the black one without measuring
+# the length! Use procedures to do so. 
+
+# Solution:
+
+repeatWhile(leftIsBlack)
+{
+    # mark current position
+    whiteDot()
+    stepRight(1)
+    backward(1)
+    if(frontIsWhite)
+    {
+        # go to the end of the white line
+        # which you have thusfar ...	
+        repeatWhile(frontIsWhite)
+        {
+            forward(1)
+        }
+        # ... and make it 2 steps longer
+        lineWhite(2)
+    }
+    else 
+    {
+        # At first draw a line which is 
+        # two squares long
+        forward(1)
+        lineWhite(1)
+    }
+
+    # go back to the first marked position
+    repeat
+    {
+        if(leftIsWhite)
+        {
+            forward(1)
+            stepLeft(1)
+            break
+        }
+        else 
+        {
+            backward(1)
+        }
+    }
+}
+
+procedure lineWhite(n)
+{
+    paintWhite
+    forward(n)
+    stopPainting
+}
+
+procedure stepLeft(n)
+{
+    left
+    forward(n)
+    right
+}
+
+###### help procedures ######
+procedure stepRight(n)
+{
+    right
+    forward(n)
+    left
+}
+
+procedure whiteDot()
+{
+    lineWhite(0)
+}

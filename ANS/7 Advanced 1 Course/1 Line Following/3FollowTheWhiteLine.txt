@@ -1,0 +1,39 @@
+# Description: Let the robot
+# follow the white line to find
+# the beacon and pick it up.
+
+# Challenge: Use repeat(.){...}
+# if(.){...} and tests.
+
+# Solution:
+
+# 1. Turn to the right direction
+repeatWhile(not frontIsWhite)
+{
+    right
+}
+
+# 2. Follow the white line
+repeat
+{
+	if(frontIsWhite)
+	{
+		forward(1)
+	}
+	
+	if(rightIsWhite)
+	{
+		right
+	}
+
+	if(leftIsWhite)
+	{
+		left
+	}
+
+	if(frontIsBeacon)
+	{
+		pickUp
+		break
+	}
+}

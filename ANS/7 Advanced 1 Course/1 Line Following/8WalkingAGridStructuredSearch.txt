@@ -1,0 +1,67 @@
+# Find the black spot in a structured
+# way. Stay on the white lines and 
+# finally park Robo on the black spot.
+
+# go to start position
+forward(frontIsClear)
+left
+forward(frontIsClear)
+left(2)
+
+# use some variables for alternating
+# between left-to-right and 
+# right-to-left moves
+next = true
+lookRight = true
+
+# go back and forth to search the spot
+repeatWhile (next)
+{
+    CheckLine(lookRight)
+    next = NextLine(lookRight)
+    lookRight = not lookRight
+}
+
+# search this line
+procedure CheckLine(lookRight)
+{
+    repeatWhile (frontIsClear) {
+        if (lookRight and rightIsBlack) 
+        {
+            right
+            forward
+            end
+        }
+        else if(leftIsBlack)
+        {
+            left
+            forward
+            end
+        }
+        forward
+    }
+}
+    
+# try to go to the next line
+procedure NextLine(turnRight)
+{
+    turn(turnRight)
+    if (frontIsClear)
+    {
+        forward(2)
+        turn(turnRight)
+        return (true)
+    }
+    return (false)
+}
+
+# turn right or left depending on 
+# the current state of the robot
+procedure turn(turnRight)
+{
+    if (turnRight) {
+        right
+    } else {
+        left
+    }
+}

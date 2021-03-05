@@ -1,0 +1,13 @@
+# Description: Turn the robot
+# in the right direction
+
+# Challenge: Use repeat(.){...}
+# or repeatWhile(.){...} to do it
+# automatically
+
+# Solution:
+
+repeatWhile(not frontIsWhite)
+{
+    right
+}
