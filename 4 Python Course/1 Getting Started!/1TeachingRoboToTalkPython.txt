@@ -1,5 +1,0 @@
-#!python
-# My first Python program.
-
-while not robo.frontIsObstacle():
-    robo.forward()

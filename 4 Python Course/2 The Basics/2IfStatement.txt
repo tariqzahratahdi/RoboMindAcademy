@@ -1,9 +1,0 @@
-#!python
-# Challenge:
-# Move forward if there is no obstacle in front of you.
-# Turn right if there is an obstacle in front of you
-
-if robo.frontIsObstacle():
-    robo.right()
-else:
-    robo.forward()

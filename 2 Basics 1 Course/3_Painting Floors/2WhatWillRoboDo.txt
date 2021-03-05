@@ -1,6 +1,0 @@
-repeat(3)
-{
-    forward
-    paintWhite
-    stopPainting
-}
