@@ -1,0 +1,10 @@
+# Description: Create your own robo
+# dance. Use any commands you like.
+
+# Challenge: to get acquainted with
+# robomind instructions and sequencing.
+
+# Solution: 
+
+# any solution is ok :-)
+

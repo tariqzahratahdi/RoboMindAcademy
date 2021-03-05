@@ -1,0 +1,13 @@
+right
+forward(4)
+left
+forward(4)
+eatUp
+backward(4)
+
+right
+forward(4)
+left
+forward(4)
+eatUp
+backward(4)

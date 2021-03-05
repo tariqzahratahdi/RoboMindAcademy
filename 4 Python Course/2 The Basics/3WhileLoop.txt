@@ -1,0 +1,15 @@
+#!python
+# Challenge:
+# Move forward while there is no obstacle  in front of you.
+# Then turn right and do the same again.
+# Use while loops and the not operator.
+
+# Solution:
+while robo.frontIsClear():
+    robo.forward()
+
+robo.right()
+
+while not robo.frontIsObstacle():
+    robo.forward()
+

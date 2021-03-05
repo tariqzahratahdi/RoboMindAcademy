@@ -1,0 +1,69 @@
+# Description: Let the robot find
+# beacons at unknown locations and
+# and put them on top of potholes
+# without help of the environment.
+
+# Challenge: Use flipCoin in combination
+# with repeat{...} as a search strategy.
+# Use procedures to implement.
+
+# Solution:
+
+repeat(2)
+{
+	findBeacon
+	findPothole
+}
+
+# 1. Complete:
+procedure findPothole
+{
+	repeat
+	{
+		if (frontIsClear)
+		{
+			forward(1)
+		}
+		
+		if(frontIsBlack and not frontIsBeacon)
+		{
+			putDown
+			return
+		}
+
+		if (flipCoin)
+		{
+			right
+		}
+		else
+		{
+			left
+		}
+	}
+}
+
+procedure findBeacon
+{
+	repeat
+	{
+		if (frontIsClear)
+		{
+			forward(1)
+		}
+		
+		if(frontIsBeacon and not frontIsBlack)
+		{
+			pickUp
+			return
+		}
+
+		if (flipCoin)
+		{
+			right
+		}
+		else
+		{
+			left
+		}
+	}
+}

@@ -1,0 +1,13 @@
+#!python
+# Challenge: Paint a line with a given length.
+
+# Solution
+
+def paint_line(length):
+    robo.paintWhite()
+    for w in range(length):
+        robo.forward(1)
+    robo.stopPainting()
+
+paint_line(2)
+

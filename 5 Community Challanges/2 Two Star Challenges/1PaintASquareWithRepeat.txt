@@ -1,0 +1,14 @@
+# Description: Let the robot draw 
+# a square.
+
+# Challenge: use repeat(.){...}
+
+# Solution:
+
+paintWhite
+repeat(4)
+{
+    forward(3)
+    right
+}
+stopPainting

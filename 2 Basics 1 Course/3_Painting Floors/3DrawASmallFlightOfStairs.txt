@@ -1,0 +1,16 @@
+# Description: Let the robot draw a small
+# flight of stairs with 3 steps.
+
+# Challenge: Use repeat(3){...} to do it.
+
+# Solution:
+
+paintWhite
+repeat(3)
+{
+    forward(1)
+    right
+    forward(1)
+    left
+}
+stopPainting

@@ -1,0 +1,37 @@
+# Description: Let the robot dig 
+# through the beacons to get to
+# the white spot.
+
+# Challenge: Complete the program
+# with forward, pickUp, putDown,
+# right, and end.
+
+# solution: 
+
+right
+repeat
+{
+	if(frontIsClear)
+	{
+		# 1. Complete:
+		forward(1)
+	}
+	
+	if(frontIsBeacon)
+	{
+		# 2. Complete:
+		pickUp
+		right
+		right
+		putDown
+		right
+		right
+	}
+	
+	if(frontIsWhite)
+	{
+		# 3. Complete:
+		forward(1)
+		end
+	}
+}

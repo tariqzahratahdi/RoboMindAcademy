@@ -1,0 +1,52 @@
+# Description: Adjust your 
+# program to let Robo also 
+# paint this much larger floor 
+# with a checkerboard pattern.
+
+# Challenge: the floor is not
+# square anymore! Solve by
+# splitting horizontal and vertical
+# lines with own parameters, OR use
+# condition: while (frontIsClear){...}
+
+# solution:
+
+# go to start
+backward(6)
+right
+backward(9)
+
+#horizontal stripes
+repeat(13)
+{
+	# paint a stripe
+	paintWhite
+	forward(18)
+
+	# go back
+	stopPainting
+	backward(18)
+
+	# go to a new position
+	left
+	forward(1)
+	right
+}
+
+#vertical stripes
+right
+repeat(19)
+{
+	# paint a stripe
+	paintWhite
+	forward(12)
+
+	# go back
+	stopPainting
+	backward(12)
+
+	# go to a new position
+	left
+	forward(1)
+	right
+}

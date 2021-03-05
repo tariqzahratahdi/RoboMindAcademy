@@ -1,0 +1,16 @@
+# Description: Let the robot pick
+# up the beacon to its lower right.
+
+# Challenge: Just try out the 
+# commands you can use in RoboMind.
+
+# Solution:
+
+right
+forward
+forward
+forward
+right
+forward
+forward
+pickUp

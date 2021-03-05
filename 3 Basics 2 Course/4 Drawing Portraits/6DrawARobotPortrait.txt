@@ -1,0 +1,50 @@
+# Description: Let the robot 
+# draw the eyes, nose and
+# mouth of a robot portrait.
+
+# Challenge:  Use procedures
+# and sequencing.
+
+# Solution:
+
+# 1. Draw first eye:
+square
+
+# 2. Draw second eye:
+right
+forward(4)
+left
+square
+
+# 3. Draw nose
+backward(1)
+left
+forward(2)
+right
+square
+
+# 4. Draw mouth
+backward(2)
+left
+forward(1)
+right
+square
+right
+forward(1)
+left
+square
+right
+forward(1)
+left
+square
+
+procedure square
+{
+	paintWhite
+	repeat(4)
+	{
+		forward(1)
+		right
+	}
+	stopPainting
+}

@@ -1,0 +1,18 @@
+# Description: Let the robot draw a larger
+# flight of stairs with 6 steps.
+
+# Challenge: Adjust your previous 
+# program to do it. See what is
+# the same and what should change.
+
+# Solution:
+
+paintWhite
+repeat(6)
+{
+    forward(1)
+    right
+    forward(1)
+    left
+}
+stopPainting

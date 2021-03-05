@@ -1,0 +1,22 @@
+# Description: Let the robot draw a 
+# square, but now use repeat(.){...} 
+# to make your script more compact.
+
+# Challenge: In the previous program
+# forward(3) and right are repeated
+# 4 times. You can let the robot do
+# the same with a much more compact
+# program by using repeat(.){...}
+
+# An example of how to use it is given 
+# on the Quick Reference Card
+
+# Solution:
+
+paintWhite
+repeat(4)
+{
+    forward(3)
+    right
+}
+stopPainting

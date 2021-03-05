@@ -1,0 +1,16 @@
+#!python
+# Challenge:  Go down to the black line and follow that line to the right until
+#     there is a wall to the right of Robo. Use the <code>break</code> instruction in
+#     your Solution.
+
+# position Robo
+robo.left(2)
+robo.forward()
+robo.left()
+
+# do your thing
+while robo.frontIsBlack():
+    if not robo.rightIsObstacle():
+        robo.forward()
+    else:
+        break

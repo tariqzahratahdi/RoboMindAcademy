@@ -1,0 +1,18 @@
+# Description: Goal is to just try out
+# how flipCoin works.
+
+# Challenge: Use flipCoin, possibly
+# with other commands.
+
+# All solutions are ok :-)
+
+# solution:
+
+if(flipCoin)
+{
+   right
+}
+else
+{
+   left
+}

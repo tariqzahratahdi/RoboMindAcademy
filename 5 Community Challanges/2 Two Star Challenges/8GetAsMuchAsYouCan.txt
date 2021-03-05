@@ -1,0 +1,8 @@
+repeat(5){
+    right
+    forward(4)
+    left
+    forward(10)
+    eatUp
+    backward(4)
+}

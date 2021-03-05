@@ -1,0 +1,25 @@
+# Description: Let the robot
+# find the safe spot marked
+# with white and stop there.
+
+# Challenge: Use repeat(.){...}
+# and if(.){...}else{...}
+
+# Solution:
+
+repeat
+{
+	if (leftIsWhite)
+	{
+		# 1. Here Robo has
+		# to do something:
+		left
+		forward(1)
+		end
+	}
+	else
+	{
+		# 2. And here too:
+		forward(1)
+	}
+}

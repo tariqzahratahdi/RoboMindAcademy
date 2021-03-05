@@ -1,0 +1,19 @@
+# Description: Adapt your script 
+# to also move all beacons in 
+# this case.
+
+# Challenge: Use is any case
+# repeat(3), pickUp, and putDown
+
+# solution:
+
+repeat(12)
+{
+   pickUp
+   right
+   right
+   putDown
+   left
+   forward(1)
+   left
+}
