@@ -8,14 +8,11 @@
 # Solution:
 
 right
-forward
-forward
-forward
+forward(3)
 right
-forward
-forward
+forward(2)
 pickUp
-forward
+forward(1)
 right
 forward(7)
 putDown
